@@ -27,10 +27,11 @@ body {
 }
 
 .container > section {
+  --padding: 10px;
   display: inline-block;
+  width: calc(100% - var(--padding) * 2);
   margin-bottom: var(--gutter);
-  width: calc(100% - 20px);
-  padding: 10px;
+  padding: var(--padding);
   background: #eee;
 }
 
