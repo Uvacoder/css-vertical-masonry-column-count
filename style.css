@@ -14,6 +14,15 @@ body {
 	column-count: 4;
 }
 
+.container > section {
+  --padding: 10px;
+  display: inline-block;
+  width: calc(100% - var(--padding) * 2);
+  margin-bottom: var(--gutter);
+  padding: var(--padding);
+  background: linear-gradient(45deg, #eee, #e9e9e9);
+}
+
 @media (max-width: 1280px) {
   .container { column-count: 3; }
 }
@@ -22,17 +31,11 @@ body {
   .container { column-count: 2; }
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 600px) {
   .container { column-count: 1; }
-}
-
-.container > section {
-  --padding: 10px;
-  display: inline-block;
-  width: calc(100% - var(--padding) * 2);
-  margin-bottom: var(--gutter);
-  padding: var(--padding);
-  background: #eee;
+  .container > section > ul {
+    display: none;
+  }
 }
 
 h3 {
@@ -48,4 +51,26 @@ ul {
 li {
   margin: 0;
   padding: 0;
+}
+
+.toggle-link {
+  list-style: none;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: underline;
+  margin: 5px 0 0 0;
+}
+
+.open, .closed {
+  overflow-y: hidden;
+  transition: all 0.5s ease;
+}
+
+.open {
+  height: auto;
+  max-height: 500px;
+}
+
+.closed {
+  max-height: 90px;
 }
