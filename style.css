@@ -31,13 +31,6 @@ body {
   .container { column-count: 2; }
 }
 
-@media screen and (max-width: 600px) {
-  .container { column-count: 1; }
-  .container > section > ul {
-    display: none;
-  }
-}
-
 h3 {
   margin: 0 0 10px 0;
   font-size: 1.325rem;
@@ -72,5 +65,16 @@ li {
 }
 
 .closed {
-  max-height: 90px;
+  max-height: 70px;
+}
+
+@media screen and (max-width: 600px) {
+  .container { column-count: 1; }
+  .container > section > ul,
+  .toggle-link {
+    display: none;
+  }
+  h3 {
+    margin: 0;
+  }
 }
